@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Black Belt",
+    "type": "Fighting",
+    "boost": 10
+  },
+  {
+    "name": "Black Glasses",
+    "type": "Dark",
+    "boost": 10
+  },
+  {
+    "name": "Charcoal",
+    "type": "Fire",
+    "boost": 10
+  },
+  {
+    "name": "Dragon Fang",
+    "type": "Dragon",
+    "boost": 10
+  },
+  {
+    "name": "Hard Stone",
+    "type": "Rock",
+    "boost": 10
+  },
+  {
+    "name": "Magnet",
+    "type": "Electric",
+    "boost": 10
+  },
+  {
+    "name": "Metal Coat",
+    "type": "Steel",
+    "boost": 10
+  },
+  {
+    "name": "Miracle Seed",
+    "type": "Grass",
+    "boost": 10
+  },
+  {
+    "name": "Mystic Water",
+    "type": "Water",
+    "boost": 10
+  },
+  {
+    "name": "Never-Melt Ice",
+    "type": "Ice",
+    "boost": 10
+  },
+  {
+    "name": "Pink Bow",
+    "type": "Normal",
+    "boost": 10
+  },
+  {
+    "name": "Poison Barb",
+    "type": "Poison",
+    "boost": 10
+  },
+  {
+    "name": "Sharp Beak",
+    "type": "Flying",
+    "boost": 10
+  },
+  {
+    "name": "Silk Scarf",
+    "type": "Normal",
+    "boost": 10
+  },
+  {
+    "name": "Silver Powder",
+    "type": "Bug",
+    "boost": 10
+  },
+  {
+    "name": "Soft Sand",
+    "type": "Ground",
+    "boost": 10
+  },
+  {
+    "name": "Spell Tag",
+    "type": "Ghost",
+    "boost": 10
+  },
+  {
+    "name": "Stick",
+    "type": "Normal",
+    "boost": 10
+  },
+  {
+    "name": "Thick Club",
+    "type": "Normal",
+    "boost": 10
+  },
+  {
+    "name": "Twisted Spoon",
+    "type": "Psychic",
+    "boost": 10
+  }
+]

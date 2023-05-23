@@ -1,0 +1,772 @@
+:root {
+    --color-background: #79b7b6ff;
+    --color-text-moveset: black;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family:Calibri;
+  color: white;
+}
+
+
+.background {
+    background: url('./images/background.jpg') no-repeat center center / cover;
+    color: white;
+    width: 1920px;
+    height: 1080px;
+    z-index: -2;
+}
+
+.texte {
+    font-weight: bold; 
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* Diese Werte anpassen */
+
+.data-table {    
+    line-height: 0.82rem; /* diesen Wert so anpassen, dass die Attacken angezeigt werden*/
+    margin: 0 auto 0rem;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.cell-num {
+    color: var(--color-text-moveset); /* Farbe des Textes im Moveset */
+    /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
+}
+
+a {
+    color: var(--color-text-moveset);/* Farbe des Textes im Moveset */
+    /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
+    text-decoration: none;
+}
+
+.gradient-box {
+    position: absolute;
+    border-radius: 15px;
+    background-color: var(--color-background); /* Farbe, welche unten im Farbverlauf angezeigt werden soll */
+    opacity: 1;
+  }
+
+/* Diese Werte anpassen - ENDE ------------------------------------------------ */
+/* ---------------------------------------------------------------------------- */
+/* Overlay Malen nach Zahlen */
+
+
+
+.gradient-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
+    border-radius: 15px;
+    z-index: -1;
+}
+
+.box-time {
+    top: 10px;
+    left: 10px;
+    width: 425px;
+    height: 135px;
+    box-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    z-index: 0;
+}
+
+.box-heldItem {
+    top: 160px;
+    left: 35px;
+    width: 375px;
+    height: 90px;
+    box-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    z-index: 0;
+}
+
+.box-pkmn-image {
+    position:absolute;
+    top: 270px;
+    left: 10px;
+    width: 425px;
+    height: 285px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-type {
+    top: 590px;
+    left: 35px;
+    width: 375px;
+    height: 90px;
+    box-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    z-index: 0;
+}
+
+.box-level {
+    top: 695px;
+    left: 10px;
+    width: 425px;
+    height: 100px;
+    box-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    z-index: 0;
+}
+
+.box-stats {
+    top: 810px;
+    left: 10px;
+    width: 425px;
+    height: 260px;
+    box-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    z-index: 0;
+}
+
+.box-attacks {
+    top: 900px;
+    left: 520px;
+    width: 880px;
+    height: 170px;
+    box-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    z-index: 0;
+}
+
+.box-moveset {
+    top: 10px;
+    left: 1485px;
+    width: 425px;
+    height: 1060px;
+    box-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    z-index: 0;
+}
+
+.box-enemy {
+    top: 35px;
+    left: 1485px;
+    width: 425px;
+    height: 165px;
+    box-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    z-index: 0;
+}
+
+.enemy1 {    
+    top: 10px;
+    left: 1485px;
+    width: 425px;
+    height: 150px;
+}
+
+.enemy2 {    
+    top: 194px;
+    left: 1485px;
+    width: 425px;
+    height: 150px;
+}
+
+.enemy3 {    
+    top: 378px;
+    left: 1485px;
+    width: 425px;
+    height: 150px;
+}
+
+.enemy4 {    
+    top: 562px;
+    left: 1485px;
+    width: 425px;
+    height: 150px;
+}
+
+.enemy5 {    
+    top: 746px;
+    left: 1485px;
+    width: 425px;
+    height: 150px;
+}
+
+.enemy6 {    
+    top: 920px;
+    left: 1485px;
+    width: 425px;
+    height: 150px;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* Time */
+.timeHeader,
+.timeText {
+    position: relative;
+    z-index: 1;
+}
+
+.timeText {
+    width: 425px;
+    text-align: center;
+    font-size: 80px;
+}
+
+.timeHeader {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+
+/* ---------------------------------------------------------------------------- */
+/* Held Item */
+
+.heldItemHeader {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.heldItemText {
+    font-size: 50px;
+    margin-top: -5px;
+    margin-left: 20px;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* Pokemon Image */
+.pkmn-image {
+    height: 100%;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* Pokemon Type */
+.box-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pkmn-type {
+    display: inline-block;
+    width: 140px;
+    padding: 0 10px;
+    margin-bottom: 4px;
+    background: #dbdbdb;
+    background-color: rgb(219, 219, 219);
+    border: 1px solid #a3a3a3;
+    border-radius: 8px;
+    border: 2px solid rgba(0,0,0,.2);
+    color: #fff;
+    font-size: 35px;
+    font-weight: normal;
+    line-height: 3rem;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.7);
+    text-transform: uppercase;
+    transition: opacity .4s;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* Level */
+
+.box-level {
+    width: 425px;
+    text-align: center;
+}
+
+.levelText {
+    font-size: 60px;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* Stats */
+
+.table-stats{
+    font-size: 45px;
+    width: 300px;
+    height: 86px;
+    margin-top: -7.5px;
+    margin-left: -15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    position: relative; /* Neues Styles hinzugefügt */
+    z-index: 1; /* Neues Styles hinzugefügt */
+}
+
+.td-stats {
+    text-align: right;
+    min-width: 120px;
+}
+
+.td-stats-value {
+    height: 70px;
+    min-width: 80px;
+    text-align: right;
+}
+
+.stat-hp {
+    position: absolute;
+    top: 30px;
+    left: 17.5px;
+    background-image: url('images/hp-w.png');
+    background-size: auto; 
+    background-repeat: no-repeat;
+    background-position: right;
+    vertical-align: middle;
+    width: 185px;
+    height: 60px;
+    z-index: -1; /* Neues Styles hinzugefügt */
+}
+
+.stat-spa {
+    position: absolute;
+    top: 30px;
+    left: 222.5px;
+    background-image: url('images/spa-w.png');
+    background-size:auto; 
+    background-repeat: no-repeat;
+    background-position: right;
+    vertical-align: middle;
+    width: 185px;
+    height: 60px;
+    z-index: -1; /* Neues Styles hinzugefügt */
+}
+
+.stat-atk {
+    position: absolute;
+    top: 102.5px;
+    left: 17.5px;
+    background-image: url('images/atk-w.png');
+    background-size: auto; 
+    background-repeat: no-repeat;
+    background-position: left;
+    vertical-align: middle;
+    width: 185px;
+    height: 60px;
+    z-index: -1; /* Neues Styles hinzugefügt */
+}
+.stat-spd {
+    position: absolute;
+    top: 102.5px;
+    left: 222.5px;
+    background-image: url('images/spd-w.png');
+    background-size:auto; 
+    background-repeat: no-repeat;
+    background-position: left;
+    vertical-align: middle;
+    width: 185px;
+    height: 60px;
+    z-index: -1; /* Neues Styles hinzugefügt */
+}
+
+.stat-def {
+    position: absolute;
+    top: 175px;
+    left: 17.5px;
+    background-image: url('images/def-w.png');
+    background-size:auto; 
+    background-repeat: no-repeat;
+    background-position: left;
+    vertical-align: middle;
+    width: 185px;
+    height: 60px;
+    z-index: -1; /* Neues Styles hinzugefügt */
+}
+
+.stat-spe {
+    position: absolute;
+    top: 175px;
+    left: 222.5px;
+    background-image: url('images/spe-w.png');
+    background-size:auto; 
+    background-repeat: no-repeat;
+    background-position: left;
+    vertical-align: middle;
+    width: 185px;
+    height: 60px;
+    z-index: -1; /* Neues Styles hinzugefügt */
+}
+/* ---------------------------------------------------------------------------- */
+/* Attacks */
+
+.table-attacks {
+    width: 880px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: flex-start;
+    padding-top: 10px;
+    font-size: 32px;
+}
+
+.table-attacks-row {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 100%;
+    margin-bottom: 10px;
+  }
+
+.td-attacks-wrapper{
+    display: grid;
+    grid-gap: 5px;
+    display: flex; /* Hinzugefügt */
+    justify-content: space-between; /* Geändert zu flex-end */
+    flex-direction: row; /* Hinzugefügt */
+    align-content: center;
+    align-items: center;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.td-attacks-attack {
+    min-width: 250px;
+    max-width: 250px;
+}
+
+.td-attacks-info {
+    min-width: 30px;
+    max-width: 40px;
+    font-size: 15px;
+    padding-right: 5px;
+    justify-self: end; /* Neue Zeile */
+}
+
+.type_icon {
+    font-size: 0px;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    margin:auto;
+}
+
+.type_icon img {
+    height: 60%;
+    width: 60%;
+    margin: 20%;
+}
+
+.itype {
+    background: #737373
+}
+
+.normal {
+    background: #797964
+}
+
+.fire {
+    background: #d52100
+}
+
+.water {
+    background: #0080ff
+}
+
+.electric {
+    background: #c90
+}
+
+.grass {
+    background: #5cb737
+}
+
+.ice {
+    background: #0af
+}
+
+.fighting {
+    background: #a84d3d
+}
+
+.poison {
+    background: #88447a
+}
+
+.ground {
+    background: #bf9926
+}
+
+.flying {
+    background: #556dff
+}
+
+.psychic {
+    background: #ff227a
+}
+
+.bug {
+    background: #83901a
+}
+
+.rock {
+    background: #a59249
+}
+
+.ghost {
+    background: #5454b3
+}
+
+.dragon {
+    background: #4e38e9
+}
+
+.dark {
+    background: #573e31
+}
+
+.steel {
+    background: #8e8ea4
+}
+
+.fairy {
+    background: #e76de7
+}
+
+.unknown {
+    background: #e76de7
+}
+
+/* ---------------------------------------------------------------------------- */
+/* Enemy Pokemon */
+
+.table-enemy {
+    width: 425px;
+    height: 150px;
+}
+
+.cell-image {
+    text-align: center; 
+    vertical-align: middle;
+}
+
+img {
+    filter: drop-shadow(8px 8px 10px black);
+}
+
+.cell-right {
+    text-align: right;
+    vertical-align: middle;
+}
+
+.cell-center {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.cell-species {
+    font-size: 25px;
+}
+
+.cell-move-left {
+    padding-left: 10px;
+}
+
+.cell-atk {
+    background-image: url('images/atk.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+    width: 53px;
+}
+
+.cell-def {
+    background-image: url('images/def.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+    width: 53px;
+}
+
+.cell-spa {
+    background-image: url('images/spa.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+    width: 53px;
+}
+
+.cell-spd {
+    background-image: url('images/spd.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+    width: 53px;
+}
+
+.cell-spe {
+    background-image: url('images/spe.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+    width: 53px;
+}
+
+.enemy-defeated {
+    opacity: 0.5 !important;
+}
+
+.enemy-highlight {
+    box-shadow: 0 0 30px rgb(0, 0, 0);
+}
+
+.enemy-highlight::after {
+    background-color: var(--color-background);
+    filter: invert(0.6);
+}
+
+/* ---------------------------------------------------------------------------- */
+/* Moveset */
+
+.box-moveset-header {
+    top: 35px;
+    left: 1470px;
+    width: 425px;
+    text-align: center;
+    font-size: 40px;
+    color:white;
+    z-index: 5;
+}
+
+.data-table th,.data-table td {
+    vertical-align: middle;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #dbdbdb;
+    padding: 4px 10px
+}
+
+.data-table th {
+    padding: 8px 10px;
+    background-color: #ebebe5;
+    color:black;
+    text-align: left;
+    white-space: nowrap
+}
+
+.data-table th:nth-child(n+2) {
+    border-left-width: 1px
+}
+
+.data-table .type-icon,.vitals-table .type-icon {
+    margin: 1px 0
+}
+
+.type-icon {
+    display: inline-block;
+    width: 66px;
+    margin-bottom: 4px;
+    background: #dbdbdb;
+    border: 1px solid #a3a3a3;
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,.2);
+    color: #fff;
+    font-size: .75rem;
+    font-weight: normal;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.7);
+    text-transform: uppercase;
+    transition: opacity .4s
+}
+
+.type-icon:link:hover,.type-icon:link:active,.type-icon:link:focus {
+    opacity: .85
+}
+
+.type-normal {
+    background-color: #aa9
+}
+
+.type-fire {
+    background-color: #f42
+}
+
+.type-water {
+    background-color: #39f
+}
+
+.type-electric {
+    background-color: #fc3
+}
+
+.type-grass {
+    background-color: #7c5
+}
+
+.type-ice {
+    background-color: #6cf
+}
+
+.type-fighting {
+    background-color: #b54
+}
+
+.type-poison {
+    background-color: #a59
+}
+
+.type-ground {
+    background-color: #db5
+}
+
+.type-flying {
+    background-color: #89f
+}
+
+.type-psychic {
+    background-color: #f59
+}
+
+.type-bug {
+    background-color: #ab2
+}
+
+.type-rock {
+    background-color: #ba6
+}
+
+.type-ghost {
+    background-color: #66b
+}
+
+.type-dragon {
+    background-color: #76e
+}
+
+.type-dark {
+    background-color: #754
+}
+
+.type-steel {
+    background-color: #aab
+}
+
+.type-fairy {
+    background-color: #e9e
+}
+
+.type-curse {
+    background-color: #698
+}
+
+.data-table .type-icon,.vitals-table .type-icon {
+    margin: 1px 0
+}
+
+
+.box-moveset-table {
+    color: black;
+    z-index: 100;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* Moveset */
+
+
+.save_for_later {
+    background: #539DDF;
+    box-shadow: 0 0 20px #539DDF;
+}

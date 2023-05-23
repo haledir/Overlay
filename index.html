@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="vue.js"></script>
+    <script src="https://unpkg.com/@microsoft/signalr@latest/dist/browser/signalr.min.js"></script>
+    <script src="http://localhost:8085/dist/gameHookMapperClient.js"></script>
+    <title>My Website</title>
+  </head>
+  <body>
+    <div id="app">
+        <div v-if="ready === false">
+            Loading...
+        </div>
+        <div v-else>
+            <stats-page :mapper="mapper"></stats-page>
+        </div>
+    </div>
+    <script src="AttackCell.js"></script>
+    <script src="AttackPanel.js"></script>
+    <script src="HeldItemPanel.js"></script>
+    <script src="LevelPanel.js"></script>
+    <script src="PkmnImagePanel.js"></script>
+    <script src="StatsPanel.js"></script>
+    <script src="TimePanel.js"></script>
+    <script src="TypePanel.js"></script>
+    <script src="EnemyPanel.js"></script>
+    <script src="MovesetPanel.js"></script>
+    <script src="StatsPage.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                mapper: null,
+                ready: false
+            },
+            async mounted() {
+                this.mapper = new GameHookMapperClient();
+                this.mapper.onConnected = (x) => (this.ready = true);
+                this.mapper.onDisconnected = (x) => (this.ready = false);
+                await this.mapper.connect();
+            }
+        });
+    </script>
+  </body>
+</html>
