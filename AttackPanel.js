@@ -3448,6 +3448,9 @@
           return hashtable;
         },
         getEvasionMod: function(modifier){
+          if (this.stats.battle.mode.toString() === null) {
+              return 1;
+          }
           const modDict = new Object();
           modDict[-6] = 3;
           modDict[-5] = 266 /100;
@@ -3466,6 +3469,9 @@
           return modDict[modifier];
         },
         getAccuracyMod: function(modifier){
+          if (this.stats.battle.mode.toString() === null) {
+              return 1;
+          }
           const modDict = new Object();
           modDict[6] = 3;
           modDict[5] = 266 /100;
@@ -3522,7 +3528,7 @@
                 pp: pp,
                 type: type,
                 pwr: pwr,
-                acc: acc * this.getEvasionMod(this.attacks.modEvasion) * this.getAccuracyMod(this.attacks.yourPkmn.modStageAccuracy)
+                acc: acc * this.getEvasionMod(this.attacks.battle.enemyPokemon.modEvasion) * this.getAccuracyMod(this.attacks.battle.yourPokemon.modStageAccuracy)
             };
         }
     },
