@@ -3528,7 +3528,7 @@
                 pp: pp,
                 type: type,
                 pwr: pwr,
-                acc: acc * this.getEvasionMod(this.attacks.battle.enemyPokemon.modEvasion) * this.getAccuracyMod(this.attacks.battle.yourPokemon.modStageAccuracy)
+                acc: Math.floor(acc * this.getEvasionMod(this.attacks.battle.enemyPokemon.modEvasion) * this.getAccuracyMod(this.attacks.battle.yourPokemon.modStageAccuracy))
             };
         }
     },
