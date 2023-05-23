@@ -3447,6 +3447,42 @@
 
           return hashtable;
         },
+        getEvasionMod: function(modifier){
+          const modDict = new Object();
+          modDict[-6] = 3;
+          modDict[-5] = 266 /100;
+          modDict[-4] = 233 / 100;
+          modDict[-3] = 2;
+          modDict[-2] = 166 / 100;
+          modDict[-1] = 133 / 100;
+          modDict[0] = 1;
+          modDict[1] = 75 / 100;
+          modDict[2] = 60 / 100;
+          modDict[3] = 50 / 100;
+          modDict[4] = 43 / 100;
+          modDict[5] = 36 / 100;
+          modDict[6] = 33 / 100;
+
+          return modDict[modifier];
+        },
+        getAccuracyMod: function(modifier){
+          const modDict = new Object();
+          modDict[6] = 3;
+          modDict[5] = 266 /100;
+          modDict[4] = 233 / 100;
+          modDict[3] = 2;
+          modDict[2] = 166 / 100;
+          modDict[1] = 133 / 100;
+          modDict[0] = 1;
+          modDict[-1] = 75 / 100;
+          modDict[-2] = 60 / 100;
+          modDict[-3] = 50 / 100;
+          modDict[-4] = 43 / 100;
+          modDict[-5] = 36 / 100;
+          modDict[-6] = 33 / 100;
+
+          return modDict[modifier];
+        },
         getMoveInfo: function(moveNumber) {
             let move = "";
             let pp = "";
@@ -3486,7 +3522,7 @@
                 pp: pp,
                 type: type,
                 pwr: pwr,
-                acc: acc
+                acc: acc * this.getEvasionMod(this.attacks.modEvasion) * this.getAccuracyMod(this.attacks.yourPkmn.modStageAccuracy)
             };
         }
     },
