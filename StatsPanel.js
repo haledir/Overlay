@@ -54,7 +54,7 @@ Vue.component("stats-panel", {
             return result * this.getMod(this.stats.battle.yourPokemon.modStageSpecialDefense);
         },        
         getMod: function(modifier) {
-            if (this.stats.battle.mode.toString() === null || this.getMod(modifier) === null) {
+            if (this.stats.battle.mode.toString() === null || modifier.toString() === null) {
                 return 1;
             }
             const modDict = new Object();
