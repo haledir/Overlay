@@ -3447,6 +3447,48 @@
 
           return hashtable;
         },
+        getEvasionMod: function(modifier){
+          if (this.attacks.battle.mode.toString() === null || modifier === undefined) {
+              return 1;
+          }
+          const modDict = new Object();
+          modDict[-6] = 3;
+          modDict[-5] = 266 /100;
+          modDict[-4] = 233 / 100;
+          modDict[-3] = 2;
+          modDict[-2] = 166 / 100;
+          modDict[-1] = 133 / 100;
+          modDict[0] = 1;
+          modDict[1] = 75 / 100;
+          modDict[2] = 60 / 100;
+          modDict[3] = 50 / 100;
+          modDict[4] = 43 / 100;
+          modDict[5] = 36 / 100;
+          modDict[6] = 33 / 100;
+
+          return modDict[modifier];
+        },
+        getAccuracyMod: function(modifier){
+          if (this.attacks.battle.mode.toString() === null || modifier.toString() === null) {
+              return 1;
+          }
+          const modDict = new Object();
+          modDict[6] = 3;
+          modDict[5] = 266 /100;
+          modDict[4] = 233 / 100;
+          modDict[3] = 2;
+          modDict[2] = 166 / 100;
+          modDict[1] = 133 / 100;
+          modDict[0] = 1;
+          modDict[-1] = 75 / 100;
+          modDict[-2] = 60 / 100;
+          modDict[-3] = 50 / 100;
+          modDict[-4] = 43 / 100;
+          modDict[-5] = 36 / 100;
+          modDict[-6] = 33 / 100;
+
+          return modDict[modifier];
+        },
         getMoveInfo: function(moveNumber) {
             let move = "";
             let pp = "";
@@ -3486,7 +3528,7 @@
                 pp: pp,
                 type: type,
                 pwr: pwr,
-                acc: acc
+                acc: Math.floor(acc * this.getEvasionMod(this.attacks.battle.enemyPokemon.modEvasion) * this.getAccuracyMod(this.attacks.battle.yourPokemon.modStageAccuracy))
             };
         }
     },

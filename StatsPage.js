@@ -32,11 +32,13 @@ Vue.component("stats-page", {
                 {
                     name: "Stats",
                     value: this.mapper.properties.player.team[0],
-                    value2: this.mapper.properties.player.badges
+                    value2: this.mapper.properties.player.badges,
+                    battle: this.mapper.properties.battle
                 },
                 {
                     name: "Attacks",
-                    value: this.mapper.properties.player.team[0]
+                    value: this.mapper.properties.player.team[0],
+                    battle: this.mapper.properties.battle
                 },
                 {
                     name: "BattleMode",
