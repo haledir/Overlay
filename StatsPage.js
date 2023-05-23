@@ -39,6 +39,7 @@ Vue.component("stats-page", {
                     name: "Attacks",
                     value: this.mapper.properties.player.team[0],               
                     modEvasion: this.mappter.properties.battle.enemyPokemon.modStageEvasion,
+                    yourPkmn: this.mappter.properties.battle.yourPokemon
                 },
                 {
                     name: "BattleMode",
