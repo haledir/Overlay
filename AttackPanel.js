@@ -3448,7 +3448,7 @@
           return hashtable;
         },
         getEvasionMod: function(modifier){
-          if (this.attacks.battle.mode.toString() === null || modifier === null) {
+          if (this.attacks.battle.mode.toString() === null || modifier === undefined) {
               return 1;
           }
           const modDict = new Object();
@@ -3469,7 +3469,7 @@
           return modDict[modifier];
         },
         getAccuracyMod: function(modifier){
-          if (this.attacks.battle.mode.toString() === null || modifier === null) {
+          if (this.attacks.battle.mode.toString() === null || modifier.toString() === null) {
               return 1;
           }
           const modDict = new Object();
