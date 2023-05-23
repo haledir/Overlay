@@ -10,7 +10,7 @@ Vue.component("stats-panel", {
                 result = Math.floor(result * 0.25);
             }
 
-            return result * this.getMod(this.stats.battle.yourPokemon.modStageSpeed);
+            return Math.floor(result * this.getMod(this.stats.battle.yourPokemon.modStageSpeed));
     
         },
         getAttack: function() {
@@ -23,7 +23,7 @@ Vue.component("stats-panel", {
                 result = Math.floor(result * 0.5);
             }
             
-            return result * this.getMod(this.stats.battle.yourPokemon.modStageAttack);
+            return Math.floor(result * this.getMod(this.stats.battle.yourPokemon.modStageAttack));
         },
         getDefense: function() {
             var result = this.stats.value.defense;
@@ -31,7 +31,7 @@ Vue.component("stats-panel", {
                 result = Math.floor(this.stats.value.defense * 1.125);
             } 
 
-            return result * this.getMod(this.stats.battle.yourPokemon.modStageDefense);
+            return Math.floor(result * this.getMod(this.stats.battle.yourPokemon.modStageDefense));
         },
         getSPA: function() {
             var result = this.stats.value.specialAttack;
@@ -40,7 +40,7 @@ Vue.component("stats-panel", {
                 result = Math.floor(this.stats.value.specialAttack * 1.125);
             }
 
-            return result * this.getMod(this.stats.battle.yourPokemon.modStageSpecialAttack);
+            return Math.floor(result * this.getMod(this.stats.battle.yourPokemon.modStageSpecialAttack));
         },
         getSPD: function() {
             var result = this.stats.value.specialDefense;
@@ -51,10 +51,10 @@ Vue.component("stats-panel", {
                 result = this.stats.value.specialDefense;
             }
 
-            return result * this.getMod(this.stats.battle.yourPokemon.modStageSpecialDefense);
+            return Math.floor(result * this.getMod(this.stats.battle.yourPokemon.modStageSpecialDefense));
         },        
         getMod: function(modifier) {
-            if (this.stats.battle.mode.toString() === null || modifier.toString() === null) {
+            if (this.stats.battle.mode.toString() === null || modifier === null) {
                 return 1;
             }
             const modDict = new Object();
