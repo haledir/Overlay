@@ -550,67 +550,75 @@ img {
     filter: drop-shadow(8px 8px 10px black);
 }
 
+.grid-vertical-container {
+    display: flex; 
+    justify-content: space-evenly; 
+    flex-direction: column; 
+    align-content: center;
+    align-items: center;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.grid-horizontal-container {
+    display: flex; 
+    justify-content: space-evenly; 
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    vertical-align: middle;
+    height: 100%;
+}
+
 .cell-right {
     text-align: right;
     vertical-align: middle;
+    align-content: center;
 }
 
 .cell-center {
+    display: table-cell;
     text-align: center;
     vertical-align: middle;
+    align-content: center;
 }
 
 .cell-species {
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .cell-move-left {
     padding-left: 10px;
 }
 
-.cell-atk {
-    background-image: url('images/atk.png');
+.cell-stats-enemy {
     background-size: contain; 
     background-repeat: no-repeat;
     background-position: center;
-    vertical-align: middle;
-    width: 53px;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 40px;
+}
+
+.cell-atk {
+    background-image: url('images/atk.png');
 }
 
 .cell-def {
     background-image: url('images/def.png');
-    background-size: contain; 
-    background-repeat: no-repeat;
-    background-position: center;
-    vertical-align: middle;
-    width: 53px;
 }
 
 .cell-spa {
     background-image: url('images/spa.png');
-    background-size: contain; 
-    background-repeat: no-repeat;
-    background-position: center;
-    vertical-align: middle;
-    width: 53px;
 }
 
 .cell-spd {
     background-image: url('images/spd.png');
-    background-size: contain; 
-    background-repeat: no-repeat;
-    background-position: center;
-    vertical-align: middle;
-    width: 53px;
 }
 
 .cell-spe {
     background-image: url('images/spe.png');
-    background-size: contain; 
-    background-repeat: no-repeat;
-    background-position: center;
-    vertical-align: middle;
-    width: 53px;
 }
 
 .enemy-defeated {
