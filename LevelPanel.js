@@ -37,14 +37,26 @@ Vue.component("level-panel", {
           this.exp_lvl = Math.floor(xp_this_level);
           this.exp_needed_lvl = Math.floor(xp_this_level_needed);
           return result;
+      },
+      getXPGrp: function(rate) {
+        return this.levelData.all_rates[rate].toString()
       }
     },
     template: `
     <div class="time-panel gradient-box box-level">
-      <div class="levelText texte">Level: {{ levelData.value }}</div>
-      <div class="xp-bar-container">
-        <div class="xp-bar-caption texte"> {{ exp_lvl }} / {{ exp_needed_lvl }} </div>
-        <progress class="xp-bar" :value="getXP()" max="100"></progress>
+      <div class="xp-header-container texte">
+        <div class="xp-group-container xp-group">
+          <div class="xp-group-header">Exp. Group</div>
+          <div class="xp-group-text"> {{ getXPGrp(levelData.rate) }}</div>
+        </div>
+        <div class="levelText texte">Level: {{ levelData.value }}</div>
+      </div>
+      <div class="xp-section">
+        <div><span class="texte">EXP:&nbsp</span></div>
+        <div class="xp-bar-container">
+          <div class="xp-bar-caption texte"> {{ exp_lvl }} / {{ exp_needed_lvl }} </div>
+          <progress class="xp-bar" :value="getXP()" max="100"></progress>
+        </div>
       </div>
     </div>
   `,
