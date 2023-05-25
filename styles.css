@@ -277,12 +277,19 @@ a {
     font-size: 60px;
 }
 
+.xp-bar-caption {
+    position: relative;
+    margin-bottom: -20px;
+    z-index: 2;
+}
+
 .xp-bar {
     width: 320px;
     height: 12px;
     appearance: none;
     border: 1px solid rgba(0,0,0);
-
+    position: relative;
+    z-index: 1;
 }
 
 /* ---------------------------------------------------------------------------- */
