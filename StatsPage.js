@@ -27,7 +27,10 @@ Vue.component("stats-page", {
                 },
                 {
                     name: "Level",
-                    value: this.mapper.properties.player.team[0].level
+                    value: this.mapper.properties.player.team[0].level,
+                    rate: 2,
+                    all_rates: ["Fast", "Medium-Fast", "Medium-Slow", "Slow"],
+                    xp_current: this.mapper.properties.player.team[0].expPoints
                 },
                 {
                     name: "Stats",
@@ -92,7 +95,7 @@ Vue.component("stats-page", {
         <heldItem-panel :key="statsData[1].name" :hItem="statsData[1].value"></heldItem-panel>
         <pkmnImage-panel :key="statsData[2].name" :pkmn="statsData[2].value"></pkmnImage-panel>
         <type-panel :key="statsData[3].name" :type="statsData[3]"></type-panel>
-        <level-panel :key="statsData[4].name" :level="statsData[4].value"></level-panel>
+        <level-panel :key="statsData[4].name" :levelData="statsData[4]"></level-panel>
         <stats-panel :key="statsData[5].name" :stats="statsData[5]"></stats-panel>
         <attack-panel :key="statsData[6].name" :attacks="statsData[6]"></attack-panel>
         <moveset-panel v-if="statsData[7].value.toString() !== 'Trainer'"></moveset-panel>
