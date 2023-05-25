@@ -1,5 +1,11 @@
 Vue.component("level-panel", {
     props: ["levelData"],
+    data: function () {
+      return {
+        exp_lvl: 0,
+        exp_needed_lvl: 0
+      };
+    },
     methods: {
       getXP: function () {
           var result = 0;
@@ -28,7 +34,8 @@ Vue.component("level-panel", {
           xp_this_level_needed = xp_needed_next - xp_needed_current;
           xp_this_level = xp_current - xp_needed_current;
           result = (xp_this_level / xp_this_level_needed) * 100;
-
+          this.exp_lvl = Math.floor(xp_this_level);
+          this.exp_needed_lvl = Math.floor(xp_this_level_needed);
           return result;
       }
     },
@@ -36,6 +43,7 @@ Vue.component("level-panel", {
     <div class="time-panel gradient-box box-level">
       <div class="levelText texte">Level: {{ levelData.value }}</div>
       <div class="xp-bar-container">
+        <div class="xp-bar-caption texte"> {{ exp_lvl }} / {{ exp_needed_lvl }} </div>
         <progress class="xp-bar" :value="getXP()" max="100"></progress>
       </div>
     </div>
