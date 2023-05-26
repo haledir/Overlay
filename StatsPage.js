@@ -1,5 +1,10 @@
 Vue.component("stats-page", {
     props: ["mapper"],
+    data() {
+      return {
+        selection_done: false, // Beispielwert für die Auswahl
+      };
+    },
     computed: {
         statsData() {
             if (!this.mapper || !this.mapper.properties) {
@@ -7,7 +12,6 @@ Vue.component("stats-page", {
             }
 
             return [
-                
                 {
                     name: "Gametime",
                     value: this.mapper.properties.gameTime
@@ -18,17 +22,17 @@ Vue.component("stats-page", {
                 },
                 {
                     name: "Species",
-                    value: this.mapper.properties.player.team[0].species
+                    value: ""
                 },
                 {
                     name: "Type",
-                    value: "Grass",
-                    value2: "Poison"
+                    value: "",
+                    value2: ""
                 },
                 {
                     name: "Level",
                     value: this.mapper.properties.player.team[0].level,
-                    rate: 2,
+                    rate: 0,
                     all_rates: ["Fast", "Medium-Fast", "Medium-Slow", "Slow"],
                     xp_current: this.mapper.properties.player.team[0].expPoints
                 },
@@ -89,10 +93,23 @@ Vue.component("stats-page", {
     methods: {
         displayValue(index) {
             return this.statsData[15].value.toString() === null ? '-' : this.statsData[index].value ;
+        },
+        handleCustomEvent: function(data) {
+            this.selection_done = true;
+            this.statsData[3].value = data.type1;
+            this.statsData[3].value2 = data.type2;
+            document.documentElement.style.setProperty('--color-background', data.color_background);
+            document.documentElement.style.setProperty('--color-text-moveset', data.color_text_moveset);
+            document.documentElement.style.setProperty('--dt-height', data.dt_height);
+            this.statsData[2].value = data.pokemon;
+            this.statsData[4].rate = data.exp_rate;
         }
     },
     template: `
-    <div class="background">
+    <div v-if="!selection_done" class="selection-screen">
+        <select-page @custom-event="handleCustomEvent"></select-page>
+    </div>
+    <div v-else class="background">
         <time-panel :key="statsData[0].name" :gTime="statsData[0].value"></time-panel>
         <heldItem-panel :key="statsData[1].name" :hItem="statsData[1].value"></heldItem-panel>
         <pkmnImage-panel :key="statsData[2].name" :pkmn="statsData[2].value"></pkmnImage-panel>
