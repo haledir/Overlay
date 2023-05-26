@@ -95,7 +95,6 @@ Vue.component("stats-page", {
             return this.statsData[15].value.toString() === null ? '-' : this.statsData[index].value ;
         },
         handleCustomEvent: function(data) {
-            console.log("Empfangene Daten vom Child Component:", data);
             this.selection_done = true;
             this.statsData[3].value = data.type1;
             this.statsData[3].value2 = data.type2;
