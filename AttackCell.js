@@ -2,8 +2,8 @@ Vue.component("attack-cell", {
     props: ["attack"],
     template: `
     <div class="attack-cell td-attacks-wrapper">
-            <div :class="'type_icon ' + attack.type">
-                <img :src="'icons/' + attack.type + '.svg'"/>
+            <div class="type_icon rock">
+                <img :src="'icons/rock.svg'"/>
             </div>
             <div class="td-attacks-attack cell-center">{{ attack.move }}</div>
             <table class="table-attack">

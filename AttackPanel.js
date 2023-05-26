@@ -3537,11 +3537,6 @@
         <div class="table-attacks texte">
             <div class="table-attacks-row">
                 <attack-cell :attack="getMoveInfo(1)" />
-                <attack-cell :attack="getMoveInfo(2)" />
-            </div>
-            <div class="table-attacks-row">
-                <attack-cell :attack="getMoveInfo(3)" />
-                <attack-cell :attack="getMoveInfo(4)" />
             </div>
         </div>
     </div>

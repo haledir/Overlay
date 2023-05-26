@@ -458,43 +458,38 @@ a {
 
 .table-attacks {
     width: 880px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: flex-start;
-    align-items: flex-start;
-    padding-top: 10px;
+    height: 170px;
     font-size: 32px;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.table-attacks-row {
+
+.td-attacks-wrapper {
+    width: 850px;
+    grid-gap: 5px;
     display: flex;
     justify-content: space-between;
-    flex-basis: 100%;
-    margin-bottom: 10px;
-  }
-
-.td-attacks-wrapper{
-    display: grid;
-    grid-gap: 5px;
-    display: flex; /* Hinzugefügt */
-    justify-content: space-between; /* Geändert zu flex-end */
-    flex-direction: row; /* Hinzugefügt */
+    flex-direction: row;
     align-content: center;
     align-items: center;
     flex: 1;
     margin: 0 10px;
-}
+  }
+
 
 .td-attacks-attack {
-    min-width: 250px;
-    max-width: 250px;
+    width: 500px;
+    font-size: 70px;
+    margin: 0 auto;
 }
 
 .td-attacks-info {
     min-width: 30px;
     max-width: 40px;
-    font-size: 15px;
+    font-size: 20px;
     padding-right: 5px;
     justify-self: end; /* Neue Zeile */
 }
@@ -502,8 +497,8 @@ a {
 .type_icon {
     font-size: 0px;
     border-radius: 100%;
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
     margin:auto;
 }
 
