@@ -1,6 +1,7 @@
 :root {
     --color-background: #79b7b6ff;
     --color-text-moveset: black;
+    --dt-height: 12px;
 }
 
 html,
@@ -26,11 +27,21 @@ body {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
+.select-page {
+    margin: auto;
+    width: 50%;
+    font-size: 20px;
+}
+
+.text-black {
+    color: black;
+}
+
 /* ---------------------------------------------------------------------------- */
 /* Diese Werte anpassen */
 
 .data-table {    
-    line-height: 0.82rem; /* diesen Wert so anpassen, dass die Attacken angezeigt werden*/
+    line-height: var(--dt-height); /* diesen Wert so anpassen, dass die Attacken angezeigt werden*/
     margin: 0 auto 0rem;
     border-collapse: collapse;
     border-spacing: 0;
