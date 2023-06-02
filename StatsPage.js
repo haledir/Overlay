@@ -22,7 +22,7 @@ Vue.component("stats-page", {
                 },
                 {
                     name: "Species",
-                    value: this.mapper.properties.player.team[0].species
+                    value: ""
                 },
                 {
                     name: "Type",
