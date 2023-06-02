@@ -27,11 +27,6 @@ body {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.select-page {
-    margin: auto;
-    width: 50%;
-    font-size: 20px;
-}
 
 .text-black {
     color: black;
@@ -164,6 +159,13 @@ a {
     height: 165px;
     box-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     z-index: 0;
+}
+
+.box-selection {
+    position: absolute;
+    top: 1200px;
+    left: 20px;
+    font-size: 20px;
 }
 
 .enemy1 {    

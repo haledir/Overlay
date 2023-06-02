@@ -22,17 +22,17 @@ Vue.component("stats-page", {
                 },
                 {
                     name: "Species",
-                    value: ""
+                    value: this.mapper.properties.player.team[0].species
                 },
                 {
                     name: "Type",
-                    value: "",
-                    value2: ""
+                    value: "Grass",
+                    value2: "Electro"
                 },
                 {
                     name: "Level",
                     value: this.mapper.properties.player.team[0].level,
-                    rate: 0,
+                    rate: 3,
                     all_rates: ["Fast", "Medium-Fast", "Medium-Slow", "Slow"],
                     xp_current: this.mapper.properties.player.team[0].expPoints
                 },
@@ -96,20 +96,21 @@ Vue.component("stats-page", {
         },
         handleCustomEvent: function(data) {
             this.selection_done = true;
-            this.statsData[3].value = data.type1;
-            this.statsData[3].value2 = data.type2;
             document.documentElement.style.setProperty('--color-background', data.color_background);
             document.documentElement.style.setProperty('--color-text-moveset', data.color_text_moveset);
             document.documentElement.style.setProperty('--dt-height', data.dt_height);
+          
+            // Aktualisiere alle Daten im statsData-Array
+            this.statsData[3].value = data.type1;
+            this.statsData[3].value2 = data.type2;
             this.statsData[2].value = data.pokemon;
             this.statsData[4].rate = data.exp_rate;
-        }
+            console.log(this.statsData);
+          }
     },
     template: `
-    <div v-if="!selection_done" class="selection-screen">
+    <div class="background">
         <select-page @custom-event="handleCustomEvent"></select-page>
-    </div>
-    <div v-else class="background">
         <time-panel :key="statsData[0].name" :gTime="statsData[0].value"></time-panel>
         <heldItem-panel :key="statsData[1].name" :hItem="statsData[1].value"></heldItem-panel>
         <pkmnImage-panel :key="statsData[2].name" :pkmn="statsData[2].value"></pkmnImage-panel>
